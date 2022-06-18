@@ -51,4 +51,4 @@ LATERAL VIEW explode (c3) data_1;
  
 INSERT OVERWRITE LOCAL DIRECTORY './output' 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
-SELECT letra, key, COUNT(1) FROM datos GROUP BY letra, key ;
+SELECT letra, key, COUNT(1) FROM datos GROUP BY letra, key;

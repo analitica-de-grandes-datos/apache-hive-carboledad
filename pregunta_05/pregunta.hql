@@ -4,9 +4,9 @@ Pregunta
 ===========================================================================
 
 Realice una consulta que compute la cantidad de veces que aparece cada valor 
-de la columna t0.c5  por año.
+de la columna t0.c5  por ano.
 
-Apache Hive se ejecutará en modo local (sin HDFS).
+Apache Hive se ejecutara en modo local (sin HDFS).
 
 Escriba el resultado a la carpeta output de directorio de trabajo.
 
