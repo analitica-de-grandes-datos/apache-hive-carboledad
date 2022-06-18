@@ -42,6 +42,26 @@ LINES TERMINATED BY '\n';
 LOAD DATA LOCAL INPATH 'data1.csv' INTO TABLE tbl1;
 
 /*
-    >>> Escriba su respuesta a partir de este punto <<<
+    
 */
 
+DROP TABLE IF EXISTS data;
+DROP TABLE IF EXISTS datos;
+CREATE TABLE data  
+(
+    c1 INT,
+    c2 STRING,
+    c3 INT,
+    c4 DATE,
+    c5 ARRAY<CHAR(1)>, 
+    c6 STRING
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+COLLECTION ITEMS TERMINATED BY ':'
+LINES TERMINATED BY '\n';
+
+LOAD DATA LOCAL INPATH "data0.csv" OVERWRITE INTO TABLE data; 
+CREATE TABLE datos AS SELECT YEAR(c4) ano, letra FROM data LATERAL VIEW explode(c5) edata AS letra;
+INSERT OVERWRITE LOCAL DIRECTORY './output' 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+SELECT ano, letra, count(1) cant FROM datos GROUP BY ano, letra ORDER BY ano, letra ASC;
