@@ -4,14 +4,13 @@ Pregunta
 ===========================================================================
 
 Realice una consulta que compute la cantidad de veces que aparece cada valor 
-de la columna t0.c5  por ano.
+de la columna `t0.c5`  por año.
 
-Apache Hive se ejecutara en modo local (sin HDFS).
+Apache Hive se ejecutará en modo local (sin HDFS).
 
-Escriba el resultado a la carpeta output de directorio de trabajo.
+Escriba el resultado a la carpeta `output` de directorio de trabajo.
 
 */
-/*
 DROP TABLE IF EXISTS tbl0;
 CREATE TABLE tbl0 (
     c1 INT,
@@ -41,10 +40,11 @@ COLLECTION ITEMS TERMINATED BY ':'
 MAP KEYS TERMINATED BY '#'
 LINES TERMINATED BY '\n';
 LOAD DATA LOCAL INPATH 'data1.csv' INTO TABLE tbl1;
-*/
+
 /*
-    >>> Escriba su respuesta a partir de este punto <<<
+    
 */
+
 DROP TABLE IF EXISTS data;
 DROP TABLE IF EXISTS datos;
 CREATE TABLE data  
